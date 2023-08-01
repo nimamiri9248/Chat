@@ -26,7 +26,8 @@ INSTALLED_APPS = [
     "account",
     "server",
     'rest_framework',
-    'drf_spectacular'
+    'drf_spectacular',
+    'livechat'
 ]
 
 MIDDLEWARE = [
@@ -126,4 +127,7 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
     
+}
+CHANNEL_LAYERS = {
+    "default": {"BACKEND": "channels.layers.InMemoryChannelLayer"},
 }
