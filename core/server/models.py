@@ -49,7 +49,7 @@ class Server(models.Model):
                               null=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, related_name='server_category',  null=True)
     description = models.CharField(null=True, max_length=255)
-    members = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='server_members')
+    member = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='server_members')
 
     def __str__(self):
         return self.name
